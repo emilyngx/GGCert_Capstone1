@@ -33,12 +33,12 @@ This is the final project for the Google Data Analytics Certification.
 ## Step 3: Process
 ## Using R for exploration:
 ### Import libraries
-```
+```R
 library(tidyverse)
 ```
 ![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/1.png)
 ### Import data
-```
+```R
 daily_activity <- read_csv("dailyActivity_merged.csv", show_col_types = FALSE)
 daily_calories <- read_csv("dailyCalories_merged.csv", show_col_types = FALSE)
 daily_intensities <- read_csv("dailyIntensities_merged.csv", show_col_types = FALSE)
@@ -47,7 +47,7 @@ sleep <- read_csv("sleepDay_merged.csv", show_col_types = FALSE)
 weight <- read_csv("weightLogInfo_merged.csv", show_col_types = FALSE)
 ```
 ### Check DataFrame
-```{r}
+```R
 str(daily_activity)
 ```
 ![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/2.jpg)
