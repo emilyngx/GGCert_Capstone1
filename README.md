@@ -34,5 +34,6 @@ This is the final project for the Google Data Analytics Certification.
 ### Import libraries
 ```
 library(tidyverse)
-
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/Screen%20Shot%202021-11-29%20at%2012.43.13%20PM.png)
 
