@@ -47,7 +47,7 @@ sleep <- read_csv("sleepDay_merged.csv", show_col_types = FALSE)
 weight <- read_csv("weightLogInfo_merged.csv", show_col_types = FALSE)
 ```
 ### Check DataFrame
-```
+```{r}
 str(daily_activity)
 ```
 ![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/2.jpg)
@@ -97,7 +97,7 @@ summary(weight)
 ![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/13.png)
 
 ## Using SQL for Data Exploration & Cleaning
-```
+```SQL
 /* A. EXPLORATION */
 /* 1. CHECK UNIQUE IDS */
 SELECT COUNT(DISTINCT Id)
