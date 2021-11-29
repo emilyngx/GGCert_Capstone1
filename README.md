@@ -31,5 +31,8 @@ This is the final project for the Google Data Analytics Certification.
 * Variation between output represents use of different types of Fitbit trackers and individual tracking behaviors / preferences.
 
 ## Step 3: Process
+### Import libraries
+```
+library(tidyverse)
 
 
