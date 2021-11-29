@@ -36,7 +36,7 @@ This is the final project for the Google Data Analytics Certification.
 ```R
 library(tidyverse)
 ```
-![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/1.png)
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/0.png)
 ### Import data
 ```R
 daily_activity <- read_csv("dailyActivity_merged.csv", show_col_types = FALSE)
