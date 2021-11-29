@@ -1,1 +1,1 @@
-# coursera_ggcert_capstone1
+# Bellabeat Case Study
