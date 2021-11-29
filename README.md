@@ -35,5 +35,62 @@ This is the final project for the Google Data Analytics Certification.
 ```
 library(tidyverse)
 ```
-![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/Screen%20Shot%202021-11-29%20at%2012.43.13%20PM.png)
-
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/1.png)
+### Import data
+```
+daily_activity <- read_csv("dailyActivity_merged.csv", show_col_types = FALSE)
+daily_calories <- read_csv("dailyCalories_merged.csv", show_col_types = FALSE)
+daily_intensities <- read_csv("dailyIntensities_merged.csv", show_col_types = FALSE)
+daily_steps <- read_csv("dailySteps_merged.csv", show_col_types = FALSE)
+sleep <- read_csv("sleepDay_merged.csv", show_col_types = FALSE)
+weight <- read_csv("weightLogInfo_merged.csv", show_col_types = FALSE)
+```
+### Check DataFrame
+```
+str(daily_activity)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/2.jpg)
+```
+summary(daily_activity)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/3.jpg)
+```
+str(daily_calories)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/4.png)
+```
+summary(daily_calories)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/5.png)
+```
+str(daily_intensities)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/6.png)
+```
+summary(daily_intensities)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/7.png)
+```
+str(daily_steps)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/8.png)
+```
+summary(daily_steps)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/9.png)
+```
+str(sleep)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/10.png)
+```
+summary(sleep)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/11.png)
+```
+str(weight)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/12.png)
+```
+summary(weight)
+```
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/13.png)
