@@ -31,6 +31,7 @@ This is the final project for the Google Data Analytics Certification.
 * Variation between output represents use of different types of Fitbit trackers and individual tracking behaviors / preferences.
 
 ## Step 3: Process
+## Using R for exploration:
 ### Import libraries
 ```
 library(tidyverse)
@@ -94,3 +95,193 @@ str(weight)
 summary(weight)
 ```
 ![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/13.png)
+
+## Using SQL for Data Exploration & Cleaning
+```
+/* A. EXPLORATION */
+/* 1. CHECK UNIQUE IDS */
+SELECT COUNT(DISTINCT Id)
+FROM daily_activity;
+/* 33 unique Ids */
+
+SELECT COUNT(DISTINCT Id)
+FROM daily_calories; 
+/* 33 unique Ids */
+
+SELECT COUNT(DISTINCT Id)
+FROM daily_intensities;
+/* 33 unique Ids */
+
+SELECT COUNT(DISTINCT Id)
+FROM daily_steps;
+/* 33 unique Ids */
+
+SELECT COUNT(DISTINCT Id)
+FROM sleep;
+/* 24 unique Ids */
+
+SELECT COUNT(DISTINCT Id)
+FROM weight;
+/* 8 unique Ids */
+
+/* 2. CHECK NULLS */
+SELECT * 
+FROM daily_activity 
+WHERE NOT (daily_activity IS NOT NULL);
+/* None */
+
+SELECT * 
+FROM daily_calories 
+WHERE NOT (daily_calories IS NOT NULL);
+/* None */
+
+SELECT * 
+FROM daily_intensities
+WHERE NOT (daily_intensities IS NOT NULL);
+/* None */
+
+SELECT * 
+FROM daily_steps
+WHERE NOT (daily_steps IS NOT NULL);
+/* None */
+
+SELECT * 
+FROM sleep
+WHERE NOT (sleep IS NOT NULL);
+/* None */
+
+SELECT *
+FROM weight
+WHERE NOT (weight IS NOT NULL);
+/* There are multiple null values in fat column */
+SELECT *
+FROM weight;
+/* There are 67 rows in weight table */
+SELECT COUNT(*)
+FROM weight
+WHERE NOT (weight IS NOT NULL);
+/* There are 65 rows in total of 67 rows that have null values in fat column */
+
+/* 3. CHECK CONSTRAINTS */
+/* 3a. Date constrain: From 2016-04-12 to 2016-05-12 */
+SELECT MIN(ActivityDate), MAX(ActivityDate)
+FROM daily_activity;
+
+SELECT MIN(ActivityDay), MAX(ActivityDay)
+FROM daily_calories;
+
+SELECT MIN(ActivityDay), MAX(ActivityDay)
+FROM daily_intensities;
+
+SELECT MIN(ActivityDay), MAX(ActivityDay)
+FROM daily_steps;
+
+SELECT MIN(SleepDay), MAX(SleepDay)
+FROM sleep;
+
+SELECT MIN(Date), MAX(Date)
+FROM weight;
+/* min 2016-04-12, max 2016-05-12 for all tables */
+
+/* 3b. Id constraint: 10 characters */
+SELECT Id
+FROM daily_activity
+WHERE LENGTH(CAST(Id AS Text)) <> 10;
+
+SELECT Id
+FROM daily_calories
+WHERE LENGTH(CAST(Id AS Text)) <> 10;
+
+SELECT Id
+FROM daily_intensities
+WHERE LENGTH(CAST(Id AS Text)) <> 10;
+
+SELECT Id
+FROM daily_steps
+WHERE LENGTH(CAST(Id AS Text)) <> 10;
+
+SELECT Id
+FROM sleep
+WHERE LENGTH(CAST(Id AS Text)) <> 10;
+
+SELECT Id
+FROM weight
+WHERE LENGTH(CAST(Id AS Text)) <> 10;
+/* No Id with less or more than 10 characters was found in all tables */
+
+/* 4. CHECK DUPLICATES */
+SELECT Id, ActivityDate, COUNT(*)
+FROM daily_activity
+GROUP BY Id, ActivityDate
+HAVING COUNT(*) > 1;
+/* None */
+
+SELECT Id, ActivityDay, COUNT(*)
+FROM daily_calories
+GROUP BY Id, ActivityDay
+HAVING COUNT(*) > 1;
+/* None */
+
+SELECT Id, ActivityDay, COUNT(*)
+FROM daily_intensities
+GROUP BY Id, ActivityDay
+HAVING COUNT(*) > 1;
+/* None */
+
+SELECT Id, ActivityDay, COUNT(*)
+FROM daily_steps
+GROUP BY Id, ActivityDay
+HAVING COUNT(*) > 1;
+/* None */
+
+SELECT Id, SleepDay, COUNT(*)
+FROM sleep
+GROUP BY Id, SleepDay
+HAVING COUNT(*) > 1;
+/* 3 duplicates found */
+
+SELECT Id, Date, COUNT(*)
+FROM weight
+GROUP BY Id, Date
+HAVING COUNT(*) > 1;
+/* None */
+
+/* B. CLEANING */
+/* 1. Remove 3 duplicates from sleep table */
+DELETE FROM
+    sleep a
+        USING sleep b
+WHERE
+    a.id = b.id
+    AND a.sleepday = b.sleepday;
+/* Check for duplicates again */
+SELECT Id, SleepDay, COUNT(*)
+FROM sleep
+GROUP BY Id, SleepDay
+HAVING COUNT(*) > 1;
+/* None. Deleted duplicates in sleep table successfully */
+
+/* 2. Join daily_activity, daily_calories, daily_intensities, and daily_steps tables */
+/* Since they all have 33 unique ids and no null values, I will join them */
+SELECT *
+FROM daily_activity ac
+INNER JOIN daily_calories ca
+ON ac.id = ca.id AND ac.activitydate = ca.activityday
+INNER JOIN daily_intensities i
+ON ca.id = i.id AND ca.activityday = i.activityday
+INNER JOIN daily_steps s
+ON i.id = s.id AND i.activityday = s.activityday;
+
+SELECT * 
+FROM daily_activity
+WHERE totalsteps = 0;
+```
+
+
+### Observation
+* All 7 datasets have ID.
+* The daily_activity, daily_calories, daily_intensities, and daily_steps have 940 observations.
+* The date column type of each dataframe is character instead of date time.
+
+### Cleaning
+## Step 4: 
