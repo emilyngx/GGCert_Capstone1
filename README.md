@@ -31,7 +31,7 @@ This is the final project for the Google Data Analytics Certification.
 * Variation between output represents use of different types of Fitbit trackers and individual tracking behaviors / preferences.
 
 ## Step 3: Process
-## Using R for exploration:
+## Using R for Data Exploration:
 ### Import libraries
 ```R
 library(tidyverse)
@@ -96,7 +96,7 @@ summary(weight)
 ```
 ![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/13.png)
 
-## Using SQL for Data Exploration & Cleaning
+## Using SQL for Data Exploration & Cleaning:
 ```SQL
 /* A. EXPLORATION */
 /* 1. CHECK UNIQUE IDS */
