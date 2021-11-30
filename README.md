@@ -105,32 +105,32 @@ summary(weight)
 ## 3.2. Using PostgreSQL for addtional Data Exploration & Data Cleaning:
 ```SQL
 A. EXPLORATION
-/* 1. CHECK UNIQUE IDS */
+1. CHECK UNIQUE IDS
 SELECT COUNT(DISTINCT Id)
 FROM daily_activity;
-/* 33 unique Ids */
+33 unique Ids
 
 SELECT COUNT(DISTINCT Id)
 FROM daily_calories; 
-/* 33 unique Ids */
+33 unique Ids
 
 SELECT COUNT(DISTINCT Id)
 FROM daily_intensities;
-/* 33 unique Ids */
+33 unique Ids
 
 SELECT COUNT(DISTINCT Id)
 FROM daily_steps;
-/* 33 unique Ids */
+33 unique Ids
 
 SELECT COUNT(DISTINCT Id)
 FROM sleep;
-/* 24 unique Ids */
+24 unique Ids
 
 SELECT COUNT(DISTINCT Id)
 FROM weight;
-/* 8 unique Ids */
+8 unique Ids
 
-/* 2. CHECK NULLS */
+2. CHECK NULLS
 SELECT * 
 FROM daily_activity 
 WHERE NOT (daily_activity IS NOT NULL);
