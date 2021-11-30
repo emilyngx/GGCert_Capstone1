@@ -103,7 +103,7 @@ summary(weight)
 * The minimum of TotalSteps in daily_activity table is 0.
 
 ## 3.2. Using PostgreSQL for addtional Data Exploration & Data Cleaning:
-```SQL
+```postgreSQL
 /* A. EXPLORATION */
 /* 1. CHECK UNIQUE IDS */
 SELECT COUNT(DISTINCT Id)
@@ -275,7 +275,8 @@ WHERE totalsteps = 0;
 SELECT * 
 FROM daily_activity
 WHERE totalsteps = 0;
-/* Looking at this table, I saw that all of the records also have totaldistance = 0 and most of them have sedentaryminutes = 1440 (or 24 hours). This could be the time when users charged their FitBit. I decided to delete all records with totalsteps = 0 in order to avoid misleading records */
+/* Looking at this table, I saw that all of the records also have totaldistance = 0 and most of them have sedentaryminutes = 1440 (or 24 hours). This could be the time when users charged their FitBit. */
+/* I decided to delete all records with totalsteps = 0 in order to avoid misleading records */
 DELETE FROM daily_activity
 WHERE totalsteps = 0;
 
