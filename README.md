@@ -100,11 +100,11 @@ summary(weight)
 * All 7 datasets have ID.
 * The daily_activity, daily_calories, daily_intensities, and daily_steps have 940 observations.
 * The date column type of each dataframe is character instead of date time.
-* The minimum of TotalSteps in daily_activity table is 0.
+* The minimum of totalsteps in daily_activity table is 0.
 
 ## 3.2. Using PostgreSQL for addtional Data Exploration & Data Cleaning:
-```postgreSQL
-/* A. EXPLORATION */
+```SQL
+A. EXPLORATION
 /* 1. CHECK UNIQUE IDS */
 SELECT COUNT(DISTINCT Id)
 FROM daily_activity;
