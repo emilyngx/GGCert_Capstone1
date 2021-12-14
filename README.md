@@ -293,6 +293,6 @@ ON i.id = s.id AND i.activityday = s.activityday;
 ```
 
 ## Step 4: Analyze
-![alt text](images/14.png)
+<img src="https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/14.png" width=50% height=50%>
 
 
