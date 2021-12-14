@@ -292,4 +292,6 @@ INNER JOIN daily_steps s
 ON i.id = s.id AND i.activityday = s.activityday;
 ```
 
-## Step 4: 
+## Step 4: Analyze
+![alt text](https://github.com/emilyngx/coursera_ggcert_capstone1/blob/main/images/13.jpg)
+
