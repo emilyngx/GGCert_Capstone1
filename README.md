@@ -104,6 +104,15 @@ summary(weight)
 
 ## 3.2. Using PostgreSQL for addtional Data Exploration & Data Cleaning:
 ```SQL
+Alter all column names to lowercase
+
+SELECT  'ALTER TABLE ' || quote_ident(c.table_schema) || '.'
+  || quote_ident(c.table_name) || ' RENAME "' || c.column_name || '" TO ' || quote_ident(lower(c.column_name)) || ';' As ddlsql
+  FROM information_schema.columns As c
+  WHERE c.table_schema NOT IN('information_schema', 'pg_catalog') 
+      AND c.column_name <> lower(c.column_name) 
+  ORDER BY c.table_schema, c.table_name, c.column_name;
+
 A. EXPLORATION
 1. CHECK UNIQUE IDS
 SELECT COUNT(DISTINCT Id)
@@ -266,6 +275,7 @@ FROM sleep
 GROUP BY Id, SleepDay
 HAVING COUNT(*) > 1;
 /* None. Removed duplicates from sleep table successfully */
+/* I saved the cleaned sleep table as "cleaned_sleep" for visualization on Tableau in the next step */
 
 /* 2. Delete rows that have totalsteps = 0 on daily_activity table */
 SELECT COUNT(*) 
@@ -279,6 +289,7 @@ WHERE totalsteps = 0;
 /* I decided to delete all records with totalsteps = 0 in order to avoid misleading records */
 DELETE FROM daily_activity
 WHERE totalsteps = 0;
+/* I saved the cleaned daily_activity table as "cleaned_daily_activity" for visualization on Tableau in the next step */
 
 /* 3. Join daily_activity, daily_calories, daily_intensities, and daily_steps tables */
 /* Since they all have 33 unique ids and no null values, I will join them */
@@ -294,5 +305,8 @@ ON i.id = s.id AND i.activityday = s.activityday;
 
 ## Step 4: Analyze
 <img src="https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/14.png" width=50% height=50%>
+Average hours asleep of all users during the week are around 7 hours per day
+
+
 
 
