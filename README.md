@@ -299,12 +299,29 @@ INNER JOIN daily_steps s
 ON i.id = s.id AND i.activityday = s.activityday;
 ```
 
-## Step 4: Analyze
+## Step 4 & 5: Analyze & Share
 <img src="https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/14.png" width=50% height=50%>
-Average hours asleep of all users during the week are around 7 hours per day
 
+Average hours asleep of all users during the week are around 7 hours per day.
 
-<img src="https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/15.png" width=50% height=50%>
-Sedentary Minutes have the strongest linear relationship to the number of minutes asleep of users per weekday with an R-squared = 0.17
+![alt text](https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/15.png)
 
+Sedentary Minutes have the strongest linear relationship to the number of minutes asleep of users per weekday with an R-squared = 0.17.
 
+<img src="https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/16.png" width=50% height=50%>
+
+Average Calories burned per day are around 2,361 calories. There is no significant difference between calories burned on workdays and weekends. The difference between the lowest and the highest average calories burned in this case is 166.60 calories. Jogging in 20 minutes can burn approximately 160 calories.
+
+<img src="https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/17.png" width=50% height=50%>
+
+Average Total Steps per day are around 8,311 steps, which is less than the recommended daily steps of 10,000.
+
+<img src="https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/18.png" width=50% height=50%>
+
+Sedentary minutes take up approximately 80%
+
+## Step 5: Act
+#### Recommendations
+* Notify users to complete a quick action (e.g. walk 20 steps, stand up, jump 10 times,...) after being sedentary for too long to burn more calories and have better sleep -> Bellabeat helps users stay active and improve sleep quality
+* Encourage users to log weight, water intake, food,... -> Bellabeat helps users be mindful of their health 
+* Bellabeat helps users track habits and take control of them. Different people can focus on their own goals 
