@@ -262,19 +262,15 @@ HAVING COUNT(*) > 1;
 /* None */
 
 /* B. CLEANING */
-/* 1. Remove 3 duplicates from sleep table */
-DELETE FROM
-    sleep a
-        USING sleep b
-WHERE
-    a.id = b.id
-    AND a.sleepday = b.sleepday;
+/* 1. Create new sleep table with only distinct values */
+CREATE TABLE sleep1 AS SELECT DISTINCT * 
+FROM sleep;
 /* Check for duplicates on sleep table again */
 SELECT Id, SleepDay, COUNT(*)
-FROM sleep
+FROM sleep1
 GROUP BY Id, SleepDay
 HAVING COUNT(*) > 1;
-/* None. Removed duplicates from sleep table successfully */
+/* None */
 /* I saved the cleaned sleep table as "cleaned_sleep" for visualization on Tableau in the next step */
 
 /* 2. Delete rows that have totalsteps = 0 on daily_activity table */
@@ -308,5 +304,7 @@ ON i.id = s.id AND i.activityday = s.activityday;
 Average hours asleep of all users during the week are around 7 hours per day
 
 
+<img src="https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/15.png" width=50% height=50%>
+Sedentary Minutes have the strongest linear relationship to the number of minutes asleep of users per weekday with an R-squared = 0.17
 
 
