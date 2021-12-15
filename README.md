@@ -306,7 +306,7 @@ Average hours asleep of all users during the week are around 7 hours per day.
 
 ![alt text](https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/15.png)
 
-Sedentary Minutes have the strongest linear relationship to the number of minutes asleep of users per weekday with an R-squared = 0.17.
+Sedentary Minutes have the strongest linear relationship to the number of minutes asleep of users per weekday with an R-squared = 0.17. The data shows a clear trend of the activity level linked to better sleep quality.
 
 <img src="https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/16.png" width=50% height=50%>
 
@@ -318,7 +318,10 @@ Average Total Steps per day are around 8,311 steps, which is less than the recom
 
 <img src="https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/18.png" width=50% height=50%>
 
-Sedentary minutes take up approximately 80%
+On average, the smart device users are spending 80% of their day in a sedentary state. 
+
+![alt text](https://github.com/emilyngx/GGCert_Capstone1/blob/main/images/19.png)
+Calories Burned have the strongest linear relationship to the very active distance of users per day with an R-squared = 0.23. 
 
 ## Step 5: Act
 #### Recommendations
